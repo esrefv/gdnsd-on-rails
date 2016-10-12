@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Domain.create(name: 'bulutfon.com')
+Domain.create(name: 'lab2023.com')
+
+Record.create(domain_id: 1, name: 'bulutfon.net', type: '1', content: 'dns1-dnz1.bulutfon.net hostmaster.bulutfon.net 2014011622 28800 7200 604800 86400', ttl: 600)
+
