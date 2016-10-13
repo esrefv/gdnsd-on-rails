@@ -11,6 +11,10 @@
 * There are two model named Record and Domain. Record table keeps columns named name, rtype, content, ttl.  
   But "MX" RR type keep also prio column. Domain table only keeps the name column.
   
+* Following photo shows the relationship between the tables.
+ 
+  ![relationship](https://www.dropbox.com/s/xjcs6diirxqriqk/Screenshot%20from%202016-10-13%2013_48_20.png?dl=0)
+
 ## Contributing
 
 Once you've made your great commits:
