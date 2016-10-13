@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Explanation
 
-Things you may want to cover:
+* GDNSD supports the following standard RR types with their standard RDATA formats: SOA, A, AAAA, NS, PTR, CNAME, MX, SRV, TXT, and NAPTR.
 
-* Ruby version
+    Enum values which are in this project for RR types like the following: 
 
-* System dependencies
+    SOA: 0, A: 1, AAAA: 2, NS: 3, PTR: 4, CNAME: 5, MX: 6, SRV: 7, TXT: 8, NAPTR: 9
 
-* Configuration
+* There are two model named Record and Domain. Record table keeps columns named name, rr_type, content, ttl.  
+  But "MX" RR type keep also prio column. Domain table only keeps the name column.
+  
+## Contributing
 
-* Database creation
+Once you've made your great commits:
 
-* Database initialization
+1. Fork Template
+2. Create a topic branch - `git checkout -b my_branch`
+3. Push to your branch - `git push origin my_branch`
+4. Create a Pull Request from your branch
+5. That's it!
 
-* How to run the test suite
+## Credits
 
-* Services (job queues, cache servers, search engines, etc.)
+![lab2023](http://lab2023.com/assets/images/named-logo.png)
 
-* Deployment instructions
+- Cybele is maintained and funded by [lab2023 - information technologies](http://lab2023.com/)
+- The names and logos for lab2023 are trademarks of lab2023, inc.
 
-* ...
+## License
+
+Copyright © 2016 [lab2023 - information technologies](http://lab2023.com)
