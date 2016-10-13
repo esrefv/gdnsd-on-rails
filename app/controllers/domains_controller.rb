@@ -30,6 +30,9 @@ class DomainsController < ApplicationController
     redirect_to root_path
   end
 
+  def index
+    @domains = Domain.all
+  end
 private
 
   def domain_params
