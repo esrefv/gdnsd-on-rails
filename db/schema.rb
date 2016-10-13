@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161012115900) do
+ActiveRecord::Schema.define(version: 20161013065505) do
 
   create_table "domains", force: :cascade do |t|
     t.string   "name"
@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 20161012115900) do
   create_table "records", force: :cascade do |t|
     t.integer  "domain_id"
     t.string   "name"
-    t.integer  "type"
+    t.integer  "record_type"
     t.string   "content"
     t.integer  "ttl"
     t.integer  "prio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["domain_id"], name: "index_records_on_domain_id"
   end
 
