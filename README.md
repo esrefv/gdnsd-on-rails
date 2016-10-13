@@ -8,7 +8,7 @@
 
     SOA: 0, A: 1, AAAA: 2, NS: 3, PTR: 4, CNAME: 5, MX: 6, SRV: 7, TXT: 8, NAPTR: 9
 
-* There are two model named Record and Domain. Record table keeps columns named name, rr_type, content, ttl.  
+* There are two model named Record and Domain. Record table keeps columns named name, rtype, content, ttl.  
   But "MX" RR type keep also prio column. Domain table only keeps the name column.
   
 ## Contributing
