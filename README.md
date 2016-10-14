@@ -13,7 +13,7 @@
   
 * Following photo shows the relationship between the tables.
  
-  ![relationship](https://www.dropbox.com/s/xjcs6diirxqriqk/Screenshot%20from%202016-10-13%2013_48_20.png?dl=0)
+  ![relationship](https://www.dropbox.com/s/xjcs6diirxqriqk/Screenshot%20from%202016-10-13%2013_48_20.png)
 
 ## Contributing
 
