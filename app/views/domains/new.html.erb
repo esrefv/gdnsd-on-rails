@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<h3>Create  Domain</h3>
+
+			<%= form_for @domain do |f| %>
+			<div class="input-group">
+			   <%= f.text_field :name,type:"text",  placeholder: 'Domain Name', class: "form-control input-md"  %>
+			   <span class="input-group-btn">
+			       <%= f.submit 'Add',  class:"btn btn-default" %>
+			   </span>
+			</div>
+			<% end %>
+	</div>
+</div>

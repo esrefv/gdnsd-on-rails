@@ -6,7 +6,7 @@ class DomainsController < ApplicationController
   def create
     @domain = Domain.new(domain_params)
     if @domain.save
-      redirect_to domain_path(@domain)
+      redirect_to :back
     else
       render 'domains/new'
     end
