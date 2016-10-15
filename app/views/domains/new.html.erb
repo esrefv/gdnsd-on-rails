@@ -1,14 +1,23 @@
-<div class="row">
-	<div class="col-sm-6 col-sm-offset-3">
-		<h3>Create  Domain</h3>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			<h3 class="text-center"><%= t 'new_domain' %></h3>
 
-			<%= form_for @domain do |f| %>
-			<div class="input-group">
-			   <%= f.text_field :name,type:"text",  placeholder: 'Domain Name', class: "form-control input-md"  %>
-			   <span class="input-group-btn">
-			       <%= f.submit 'Add',  class:"btn btn-default" %>
-			   </span>
-			</div>
-			<% end %>
+				<%= form_for @domain do |f| %>
+				<div class="input-group">
+				   <%= f.text_field :name,type:"text",  placeholder: 'Domain Adı', class: "form-control input-md"  %>
+				   <span class="input-group-btn">
+				       <%= f.submit 'Ekle',  class:"btn btn-default" %>
+				   </span>
+				<% end %>
+				</div>
+				
+		</div>
+	</div>
+	<br><br><br>
+	<div class="row" >
+		<div class="col-sm-4 col-sm-offset-3">
+			<h3><%= Domain.last.name %></h3>
+		</div>
 	</div>
 </div>
