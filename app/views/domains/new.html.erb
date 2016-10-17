@@ -7,7 +7,7 @@
 				<div class="input-group">
 				   <%= f.text_field :name,type:"text",  placeholder: 'Domain Adı', class: "form-control input-md"  %>
 				   <span class="input-group-btn">
-				       <%= f.submit 'Ekle',  class:"btn btn-default" %>
+				       <%= f.submit 'Ekle',  class:"btn btn-default",id:"button",onclick:"document.getElementById('domain-name').style.display = 'inline';" %>
 				   </span>
 				<% end %>
 				</div>
@@ -16,8 +16,13 @@
 	</div>
 	<br><br><br>
 	<div class="row" >
-		<div class="col-sm-4 col-sm-offset-3">
-			<h3><%= Domain.last.name %></h3>
+		<div class="domain-name" id="domain-name">
+			<div class="col-sm-4 col-sm-offset-3">
+				<h3><%= @domainn.name %></h3>
+				<div>
+					<%= render 'records/form' %>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

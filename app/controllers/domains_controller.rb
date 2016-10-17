@@ -1,10 +1,13 @@
 class DomainsController < ApplicationController
   def new
     @domain = Domain.new
+    @domainn = Domain.last
+    @record = @domainn.records.new
   end
 
   def create
     @domain = Domain.new(domain_params)
+    
     if @domain.save
       redirect_to :back
     else

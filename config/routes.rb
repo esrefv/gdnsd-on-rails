@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :records, only: [:create, :destroy]
   end
-  resources :records, only: [:create, :destroy]
+  
   root 'welcome#index'
 end
