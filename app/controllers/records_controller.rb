@@ -3,7 +3,7 @@ class RecordsController < ApplicationController
   def create
     @domain = Domain.find(params[:domain_id])
     @record = @domain.records.new(record_params)
-    if @comment.save
+    if @record.save
       redirect_to domain_path(@domain)
     end
   end
