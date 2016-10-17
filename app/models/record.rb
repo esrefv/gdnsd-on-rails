@@ -1,3 +1,4 @@
+require 'text_file'
 class Record < ApplicationRecord
   belongs_to :domain
   validates :name, :rtype, :content, :ttl, presence: true

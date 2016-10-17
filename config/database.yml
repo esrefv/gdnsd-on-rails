@@ -14,7 +14,7 @@ default: &default
 development:
   <<: *default
   database: gor_development
-  username: admin
+  username: postgres
   password: password
 
 # Warning: The database defined as "test" will be erased and
@@ -23,7 +23,7 @@ development:
 test:
   <<: *default
   database: gor_test
-  username: admin
+  username: postgres
   password: password
 
 #production:

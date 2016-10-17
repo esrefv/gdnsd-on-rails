@@ -5,10 +5,10 @@ class FileProcess
     @records = Record.where(domain_id: domain_id)
     if @records.length > 0
       @records.each do |record|
-        if record.prio.exist?
-          tmp_file.puts(record.name + "\t" + record.rtype + "\t" + record.content + "\t" + record.ttl)
+        if record.prio.present?
+          tmp_file.puts(record.name + "\t" + record.rtype + "\t" + record.content.to_s + "\t" + record.ttl.to_s)
         else
-          tmp_file.puts(record.name + "\t" + record.rtype + "\t" + record.content + "\t" + record.ttl + "\t" + record.prio)
+          tmp_file.puts(record.name + "\t" + record.rtype + "\t" + record.content.to_s + "\t" + record.ttl.to_s + "\t" + record.prio.to_s)
         end
       end
     end
@@ -16,15 +16,15 @@ class FileProcess
   end
 
   def create_file_for_record(domain_id)
-    tmp_text_file_name = Domain.where(id: domain_id).name
+    tmp_text_file_name = Domain.find(domain_id).name
     tmp_file = File.new("./text/" + tmp_text_file_name + ".txt", "w+")
 
     @records = Record.where(domain_id: domain_id)
     @records.each do |record|
-      if record.prio.exist?
-        tmp_file.puts(record.name + "\t" + record.rtype + "\t" + record.content + "\t" + record.ttl)
+      if record.prio.present?
+        tmp_file.puts(record.name + "\t" + record.rtype + "\t" + record.content.to_s + "\t" + record.ttl.to_s)
       else
-        tmp_file.puts(record.name + "\t" + record.rtype + "\t" + record.content + "\t" + record.ttl + "\t" + record.prio)
+        tmp_file.puts(record.name + "\t" + record.rtype + "\t" + record.content.to_s + "\t" + record.ttl.to_s + "\t" + record.prio.to_s)
       end
     end
     tmp_file.close
