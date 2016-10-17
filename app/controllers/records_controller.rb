@@ -18,6 +18,6 @@ class RecordsController < ApplicationController
 private
 
   def record_params
-    params.require(:record).permit(:domain_id,:name,:record_type,:content,:ttl,:prio)
+    params.require(:record).permit(:domain_id,:name,:rtype,:content,:ttl,:prio)
   end
 end
