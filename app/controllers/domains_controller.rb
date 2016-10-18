@@ -15,7 +15,6 @@ class DomainsController < ApplicationController
   end
 
   def show
-    set_domain
   end
 
   def search
