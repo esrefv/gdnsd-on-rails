@@ -11,15 +11,17 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
 $(document).ready(function(){
-	
-	$("#button").onClick = function(){
-		$("#domain-name").show();
-	}
+	//$(".add-record").hide()
+	$("#button").click(function(){
+		//$(".add-record").show();
+
+	});
 
 
 });
