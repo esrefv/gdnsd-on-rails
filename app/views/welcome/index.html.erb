@@ -9,11 +9,11 @@
           <% end %>
     </div>
     <div class="col-md-2">
-      <button type="button" class="btn " > <%= link_to 'New Domain', new_domain_path %></button>
+      <div> <%= link_to 'Yeni Domain Ekle', new_domain_path, :class => "btn btn-success" %></div>
     </div>
   </div>
 <div class="col-md-3 col-md-offset-5" style="margin-top: 160px; width: 100px">
-    <button class="btn btn-primary" type="button" style="width: 200px">
+    <div class="btn btn-primary" style="width: 250px">
       <h5><strong>Toplam Domain Sayısı</strong> <span class="badge"><%= @domains.count %></span></h5>
-    </button>
+    </div>
 </div>
