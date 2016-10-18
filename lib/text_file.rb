@@ -13,6 +13,12 @@ class FileProcess
     write_records_create_file(domain_id, tmp_text_file_name)
   end
 
+  def delete_file(text_file_name)
+    File.delete( "./text/" + text_file_name + ".txt")
+  end
+
+  private
+
   def write_records_create_file (domain_id, text_file_name)
     tmp_file = File.new("./" + @directory_name + "/" + text_file_name + ".txt", "w+")
     @records = Record.where(domain_id: domain_id)
@@ -26,7 +32,4 @@ class FileProcess
     tmp_file.close
   end
 
-  def delete_file(text_file_name)
-    File.delete( "./text/" + text_file_name + ".txt")
-  end
 end
