@@ -1,14 +1,19 @@
-<h1>Welcome#index</h1>
-<div>
-  <%= form_tag search_domains_path, method: :get, role: "search" do %>
-      <p>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search", name: nil %>
-      </p>
-  <% end %>
+<div class="row" style="margin-top: 100px">
+    <div class="col-md-3 col-md-offset-4">
+      <%= form_tag search_domains_path, style:"display:inline-block", method: :get, role: "search" do %>
+              <p>
+            <%= text_field_tag :search, params[:search], options = {:placeholder => "Domain Adı Giriniz" } %>
+            <%= submit_tag "Ara", name: nil, class: "btn btn-primary" %>
+          </p>
+
+          <% end %>
+    </div>
+    <div class="col-md-2">
+      <button type="button" class="btn " > <%= link_to 'New Domain', new_domain_path %></button>
+    </div>
+  </div>
+<div class="col-md-3 col-md-offset-5" style="margin-top: 160px; width: 100px">
+    <button class="btn btn-primary" type="button" style="width: 200px">
+      <h5><strong>Toplam Domain Sayısı</strong> <span class="badge"><%= @domains.count %></span></h5>
+    </button>
 </div>
-<%= link_to 'New Domain', new_domain_path %>s
-<br>
-<br>
-<strong>Toplam Domain Sayısı = </strong>
-<%= @domains.count %>
