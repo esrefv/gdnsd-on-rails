@@ -1,9 +1,19 @@
-<h1>Welcome#index</h1>
-<div>
-  <%= form_tag search_domains_path, method: :get, role: "search" do %>
-      <p>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search", name: nil %>
-      </p>
-  <% end %>
+<div class="row" style="margin-top: 100px">
+    <div class="col-md-3 col-md-offset-4">
+      <%= form_tag search_domains_path, style:"display:inline-block", method: :get, role: "search" do %>
+              <p>
+            <%= text_field_tag :search, params[:search], options = {:placeholder => t('.add_domain') } %>
+            <%= submit_tag t('.search'), name: nil, class: "btn btn-primary" %>
+          </p>
+
+          <% end %>
+    </div>
+    <div class="col-md-2">
+      <div> <%= link_to t('.new_domain'), new_domain_path, :class => "btn btn-success" %></div>
+    </div>
+  </div>
+<div class="col-md-3 col-md-offset-5" style="margin-top: 160px; width: 100px">
+    <div class="btn btn-primary" style="width: 250px">
+      <h5><strong><%= t'.total_domain' %></strong> <span class="badge"><%= @domains.count %></span></h5>
+    </div>
 </div>
