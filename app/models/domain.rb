@@ -10,6 +10,8 @@ class Domain < ApplicationRecord
     where("lower(name) LIKE ?", q)
   end
 
+  private
+
   def create_text_file
     process = FileProcess.new
     process.create_file_for_domain(self.name, self.id)
