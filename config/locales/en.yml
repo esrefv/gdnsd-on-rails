@@ -20,11 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
 
   welcome:
     index:
-      add_domain: "Domain Adı Giriniz"
-      total_domain: "Toplam Domain Sayısı"
-      new_domain: "Yeni Domain Ekle"
-      search: " Domain Ara"
+      add_domain: "Enter Domain Name"
+      total_domain: "Count of Total Domain"
+      new_domain: "Add New Domain"
+      search: "Search Domain"
