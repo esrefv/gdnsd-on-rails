@@ -1,10 +1,12 @@
 class FileProcess
+  def initialize
+    @directory_name = "text"
+    Dir.mkdir(@directory_name) unless File.exists?(@directory_name)
+  end
 
   def create_file_for_domain(text_file_name, domain_id)
-    directory_name = "text"
-    Dir.mkdir(directory_name) unless File.exists?(directory_name)
 
-    tmp_file = File.new("./text/" + text_file_name + ".txt", "w+")
+    tmp_file = File.new("./" + @directory_name + "/" + text_file_name + ".txt", "w+")
     @records = Record.where(domain_id: domain_id)
     if @records.length > 0
       @records.each do |record|
@@ -19,11 +21,9 @@ class FileProcess
   end
 
   def create_file_for_record(domain_id)
-    directory_name = "text"
-    Dir.mkdir(directory_name) unless File.exists?(directory_name)
 
     tmp_text_file_name = Domain.find(domain_id).name
-    tmp_file = File.new("./text/" + tmp_text_file_name + ".txt", "w+")
+    tmp_file = File.new("./" + @directory_name + "/" + tmp_text_file_name + ".txt", "w+")
 
     @records = Record.where(domain_id: domain_id)
     @records.each do |record|
