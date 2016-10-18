@@ -10,6 +10,8 @@ class Record < ApplicationRecord
 
   enum rtype: { SOA: 0, A: 1, AAAA: 2, NS: 3, PTR: 4, CNAME: 5, MX: 6, SRV: 7, TXT: 8, NAPTR: 9}
 
+  private
+
   def create_text_file
     process = FileProcess.new
     process.create_file_for_record(self.domain_id)
