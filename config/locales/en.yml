@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+
+  welcome:
+    index:
+      add_domain: "Domain Adı Giriniz"
+      total_domain: "Toplam Domain Sayısı"
+      new_domain: "Yeni Domain Ekle"
+      search: " Domain Ara"
