@@ -8,3 +8,5 @@ tr:
   saved: "Domain başarıyla oluşturuldu."
   search_results: "Arama Sonuçları"
   blank: "Aradığınız kriterlere uygun sonuç bulunmamaktadır."
+  homepage: "Ana Sayfa"
+  add_domain_page: "Domain Ekleme Sayfası"
