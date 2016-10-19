@@ -1,6 +1,9 @@
 ---
 tr:
   hello: "Merhaba Dünya"
-  new_domain: "Domain Olustur"
+  new_domain: "Yeni Domain Ekle"
   add: "Ekle"
   search: "Ara"
+  saved: "Domain başarıyla oluşturuldu."
+  search_results: "Arama Sonuçları"
+  blank: "Aradığınız kriterlere uygun sonuç bulunmamaktadır."

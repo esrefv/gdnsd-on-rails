@@ -9,7 +9,8 @@ class DomainsController < ApplicationController
     @domain = Domain.new(domain_params)
      
     if @domain.save
-      redirect_to :back
+      redirect_to :back, notice: t(:saved)
+
     else
       render 'domains/new'
     end
@@ -22,7 +23,7 @@ class DomainsController < ApplicationController
     if params[:search].present?
       @domains = Domain.search(params[:search])
     else
-      @domains = []
+      @domains = [] 
     end
   end
 

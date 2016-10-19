@@ -16,12 +16,3 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function(){
-	//$(".add-record").hide()
-	$("#button").click(function(){
-		//$(".add-record").show();
-
-	});
-
-
-});
