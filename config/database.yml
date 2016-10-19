@@ -9,12 +9,13 @@ default: &default
   pool: 5
   timeout: 5000
   encoding: utf8
+  host: localhost
 
 development:
   <<: *default
   database: gor_development
-  username:
-  password:
+  username: postgres
+  password: password
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,9 +23,9 @@ development:
 test:
   <<: *default
   database: gor_test
-  username:
-  password:
+  username: postgres
+  password: password
 
-production:
-  <<: *default
-  database: gor_production
+#production:
+ # <<: *default
+  #database: gor_production

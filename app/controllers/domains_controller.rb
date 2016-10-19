@@ -1,4 +1,6 @@
 class DomainsController < ApplicationController
+  before_action :set_domain, only: [:show, :destroy]
+
   def new
     @domain = Domain.new
     @domainn = Domain.last
@@ -28,7 +30,6 @@ class DomainsController < ApplicationController
   end
 
   def destroy
-    set_domain
     @domain.destroy
     redirect_to root_path
   end
