@@ -2,10 +2,11 @@ class RecordsController < ApplicationController
   before_action :set_domain
   before_action :set_record, only: [:update]
 
+  
   def create
     @record = @domain.records.new(record_params)
     if @record.save
-      redirect_to domain_path(@domain)
+      redirect_to :back
     end
   end
 

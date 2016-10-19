@@ -1,12 +1,36 @@
-<div role="form">
-  <%= form_for @domain do |d| %>
-      <div class="form-group">
-        <%= d.label :DomainName %><br>
-        <%= d.text_field :name , class:'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= d.submit :Save , class:'btn btn-primary'%>
-      </div>
-  <% end %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			<h3 class="text-center"><%= t 'new_domain' %></h3>
+			<%= form_for @domain do |f| %>
+			<div class="input-group">
+			   <%= f.text_field :name,type:"text",  placeholder: 'Domain Adı',id:"dname", class: "form-control input-md"  %>
+			   <span class="input-group-btn">
+			       <%= f.submit 'Ekle',  class:"btn btn-default",id:"button",onclick:"" %>
+			   </span>
+			<% end %>
+			</div>
+		</div>
+	</div>
+	<br><br><br>
+	<div class="add-record"> 
+		<div class="row domain" >
+			<div class="domain-name" id="domain-name">
+				<div class="col-md-7 col-md-offset-5">
+					<span ><h3 ><%= @domainn.name %></h3></span> 	
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row record-form" >
+			<div class="form" id="form">
+				<div class="col-md-11 col-md-offset-1">
+						<%= render 'records/form' %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-<%= link_to 'Back', root_path %>
+
+

@@ -1,8 +1,10 @@
-tr:
 
-  welcome:
-    index:
-      add_domain: "Domain Adı Giriniz"
-      total_domain: "Toplam Domain Sayısı"
-      new_domain: "Yeni Domain Ekle"
-      search: " Domain Ara"
+---
+tr:
+  hello: "Merhaba Dünya"
+  new_domain: "Yeni Domain Ekle"
+  add: "Ekle"
+  search: "Ara"
+  saved: "Domain başarıyla oluşturuldu."
+  search_results: "Arama Sonuçları"
+  blank: "Aradığınız kriterlere uygun sonuç bulunmamaktadır."

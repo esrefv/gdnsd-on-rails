@@ -22,3 +22,4 @@ superni.records.create(name: '_sip._udp.bulutfon.net', rtype: 7, content: '10 50
 superni.records.create(name: '*.bulutfon.net', rtype: 9, content: '90 50 "s" "SIP+D2T" "" _sip._tcp.bulutfon.net.', ttl: '600', prio: '0')
 superni.records.create(name: '*.bulutfon.net', rtype: 9, content: '50 50 "s" "SIP+D2U" "" _sip._udp.bulutfon.net.', ttl: '600', prio: '0')
 
+
