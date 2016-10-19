@@ -5,7 +5,7 @@
 			<h3 class="text-center"><%= t 'new_domain' %></h3>
 			<%= form_for @domain do |f| %>
 			<div class="input-group">
-			   <%= f.text_field :name,type:"text",  placeholder: 'Domain Adı',id:"dname", class: "form-control input-md"  %>
+			   <%= f.text_field :name,type:"text",  placeholder: "Eklemek istediğiniz domain ismini giriniz.",id:"dname", class: "form-control input-md"  %>
 			   <span class="input-group-btn">
 			       <%= f.submit 'Ekle',  class:"btn btn-default",id:"button",onclick:"" %>
 			   </span>
@@ -17,7 +17,7 @@
 	<div class="add-record"> 
 		<div class="row domain" >
 			<div class="domain-name" id="domain-name">
-				<div class="col-md-7 col-md-offset-5">
+				<div class="col-md-8 col-md-offset-2">
 					<span ><h3 ><%= @domainn.name %></h3></span> 	
 				</div>
 			</div>

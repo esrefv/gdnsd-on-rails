@@ -1,11 +1,9 @@
-
 <br><br><br>
-<div></div>
 <div class="row">
-	<div class=" col-sm-6 col-sm-offset-3">
+	<div class=" col-sm-6 col-sm-offset-3 ">
   	<%= form_tag search_domains_path, method: :get, role: "search" do %>
 	      <div class="form-group">
-	        <%= text_field_tag :search, params[:search], class: "form-control input-md" %>
+	        <%= text_field_tag :search, params[:search],placeholder:'Domain ismi ile arama yapınız.' , class: "form-control input-md" %>
     	  </div>
 	</div>
 </div>
@@ -21,13 +19,11 @@
 	</div>
 
 </div>
-
-
-
  <% end %>
-
-    <div class="col-md-3 col-md-offset-5" style="margin-top: 160px; width: 100px">
+<div class="row">
+    <div class="col-md-4 col-xs-offset-3 col-md-offset-5" style="margin-top: 160px; width: 100px">
       <div class="btn btn-primary" style="width: 250px">
         <h5><strong><%= t'.total_domain' %></strong> <span class="badge"><%= @domains.count %></span></h5>
       </div>
     </div>
+</div>
