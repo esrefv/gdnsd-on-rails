@@ -6,7 +6,7 @@ class RecordsController < ApplicationController
   def create
     @record = @domain.records.new(record_params)
     if @record.save
-      redirect_to :back
+      redirect_to domain_path(@domain), notice: t(:recod_succes)
     end
   end
 
