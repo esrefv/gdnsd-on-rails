@@ -12,8 +12,8 @@
 					<%= f.text_field :name , class:'form-control input-sm',:placeholder => t('record_name')%>
 				</div>
 				<div class="form-group">
-					<%= f.label :rtype ,type:'label',class:'sr-only' %>
-					<%=  f.select :rtype , options_for_select(@domainn.records.rtypes.collect{|r| [r[0].humanize,r[0]]},selected: @record.rtype),{},class:'form-control input-sm'%>
+					<%= f.label :rtype ,type:'label',class:'sr-only'%>
+					<%=  f.select :rtype , options_for_select(@domainn.records.rtypes.collect{|r| [r[0].humanize,r[0]]},selected: @record.rtype),{},class:'form-control input-sm rtype',id:'record_type' %>
 				</div>
 				<div class="form-group">
 					<%= f.label :content ,type:'label',class:'sr-only' %>
@@ -26,10 +26,10 @@
 				<%#- if %>
 				<div class="form-group">
 					<%= f.label :prio ,type:'label',class:'sr-only' %>
-					<%= f.text_field :prio ,type:'input',	class:'form-control input-sm',:placeholder => t('prio')%>
+					<%= f.text_field :prio ,type:'input',	class:'form-control input-sm prio',:placeholder => t('prio')%>
 				</div>
 				<div class="form-group">
-					<%= f.submit t('add') ,class:'btn btn-info input-sm' %>
+					<%= f.submit t('add') ,class:'btn btn-info input-sm button' %>
 				</div>
 			<% end %>
 		</div>

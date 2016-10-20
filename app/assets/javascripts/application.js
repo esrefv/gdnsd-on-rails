@@ -16,4 +16,11 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-
+$( document ).ready(function() {
+	$('.prio').hide();
+	$('#record_type').on('change', function() {
+	  if(this.value == "MX"){			
+			$('.prio').show();
+		}
+	});
+});
