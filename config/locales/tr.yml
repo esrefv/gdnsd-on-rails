@@ -7,7 +7,8 @@ tr:
   search: "Ara"
   saved: "Domain başarıyla oluşturuldu."
   search_results: "Arama Sonuçları"
-  blank: "Arama kutusuna hiçbir şey yazmadınız."
+  homepage: "Ana Sayfa"
+  blank: "Aradığınız kriterlere uygun sonuç bulunmamaktadır."
   ID: "ID"
   record_name: "Record Adı"
   record_type: "Record Tipi"
@@ -20,3 +21,5 @@ tr:
   add_your_domain_name: "Eklemek istediğiniz domain ismini giriniz."
   search_with_domain_name: "Domain ismi ile arama yapınız."
   number_of_record: "Record Sayısı"
+  add_domain_page: "Domain Ekleme Sayfası"
+

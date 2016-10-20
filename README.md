@@ -14,6 +14,12 @@
 * Following photo shows the relationship between the tables.
  
   ![relationship](docs/image/table_relationship.png)
+  
+## FAQ
+
+1. How can I change logo?
+
+Logo named logo.png is in the assets/images folder. If you want to change log, you can change image in the assets/image folder.
 
 ## Contributing
 
