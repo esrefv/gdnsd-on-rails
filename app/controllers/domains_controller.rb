@@ -19,13 +19,15 @@ class DomainsController < ApplicationController
   end
 
   def show
+    @domainn = Domain.last
+    @record = @domainn.records.new
   end
 
   def search
     if params[:search].present?
       @domains = Domain.search(params[:search])
     else
-      @domains = [] 
+      redirect_to root_path, notice: t(:blank)
     end
   end
 
