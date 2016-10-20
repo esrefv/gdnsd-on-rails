@@ -5,11 +5,11 @@
 
 				<div class="form-group">
 					<%= f.label :domain_id ,type:'label',class:'sr-only' %>
-					<%= f.text_field :domain_id ,type:'input', class:'form-control input-sm', placeholder:'Domain Id'%>
+					<%= f.text_field :domain_id ,type:'input', class:'form-control input-sm',:placeholder => t('domain_name')%>
 				</div>
 				<div class="form-group">
 					<%= f.label :name ,type:'label',class:'sr-only' %>
-					<%= f.text_field :name , class:'form-control input-sm', placeholder:' Record Name'%>
+					<%= f.text_field :name , class:'form-control input-sm',:placeholder => t('record_name')%>
 				</div>
 				<div class="form-group">
 					<%= f.label :rtype ,type:'label',class:'sr-only' %>
@@ -17,21 +17,21 @@
 				</div>
 				<div class="form-group">
 					<%= f.label :content ,type:'label',class:'sr-only' %>
-					<%= f.text_field :content ,type:'input',	class:'form-control input-sm', placeholder:'Content'%>
+					<%= f.text_field :content ,type:'input',	class:'form-control input-sm',:placeholder => t('content')%>
 				</div>
 				<div class="form-group">
 				<%= f.label :ttl ,type:'label',class:'sr-only' %>
-					<%= f.text_field :ttl ,type:'input',	class:'form-control input-sm', placeholder:'TTL'%>
+					<%= f.text_field :ttl ,type:'input',class:'form-control input-sm',:placeholder => t('ttl')%>
 				</div>
 				<%#- if %>
 				<div class="form-group">
 					<%= f.label :prio ,type:'label',class:'sr-only' %>
-					<%= f.text_field :prio ,type:'input',	class:'form-control input-sm', placeholder:'Prio'%>
+					<%= f.text_field :prio ,type:'input',	class:'form-control input-sm',:placeholder => t('prio')%>
 				</div>
 				
 				
 					<div class="form-group">
-						<%= f.submit 'Send' ,class:'btn btn-info input-sm' %>
+						<%= f.submit t('add') ,class:'btn btn-info input-sm' %>
 					</div>
 				
 			<% end %>
