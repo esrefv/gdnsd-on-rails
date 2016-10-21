@@ -11,16 +11,21 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-$( document ).ready(function() {
-	$('.prio').hide();
-	$('#record_type').on('change', function() {
+
+$(document).on('turbolinks:load', function() {
+
+ 	$('#record_type').on('change', function() {
 	  if(this.value == "MX"){			
-			$('.prio').show();
+			$('.prio').removeClass("hidden");	
 		}
+	  else{
+	  		$('.prio').addClass("hidden");
+	  }
+
 	});
 });

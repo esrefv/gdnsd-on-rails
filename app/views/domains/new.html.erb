@@ -4,9 +4,9 @@
 			<h3 class="text-center"><%= t 'new_domain' %></h3>
 			<%= form_for @domain do |f| %>
 			<div class="input-group">
-			   <%= f.text_field :name,type:"text",:placeholder => t('add_your_domain_name'),id:"dname", class: "form-control input-md"  %>
+			   <%= f.text_field :name, type:"text", :placeholder => t('add_your_domain_name'), id:"dname", class: "form-control input-md"  %>
 			   <span class="input-group-btn">
-			       <%= f.submit t(:add),  class:"btn btn-default",id:"button",onclick:"" %>
+			       <%= f.submit t(:add), class:"btn btn-default", id:"button" %>
 			   </span>
 			<% end %>
 			</div>
@@ -17,7 +17,7 @@
 		<div class="row domain" >
 			<div class="domain-name" id="domain-name">
 				<div class="col-md-8 col-md-offset-2">
-					<span ><h3 ><%=link_to @domainn.name, @domainn %></h3></span> 	
+					<span ><h3 ><%=link_to @domainlast.name, @domainlast %></h3></span> 	
 				</div>
 			</div>
 		</div>

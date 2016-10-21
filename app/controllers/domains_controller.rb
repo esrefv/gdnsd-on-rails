@@ -3,8 +3,8 @@ class DomainsController < ApplicationController
 
   def new
     @domain = Domain.new
-    @domainn = Domain.last
-    @record = @domainn.records.new
+    @domainlast = Domain.last
+    @record = @domainlast.records.new
   end
 
   def create
@@ -19,8 +19,8 @@ class DomainsController < ApplicationController
   end
 
   def show
-    @domainn = Domain.last
-    @record = @domainn.records.new
+    @domainlast = Domain.last
+    @record = @domainlast.records.new
   end
 
   def search

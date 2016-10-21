@@ -26,4 +26,5 @@ tr:
   total_domain: "Adet Domain.."
   back: "Geri Dön"
   no_record: "Henüz bu Domain için kayıtlı bir record bulunmamaktadır."
+  warning: "Uyarı!"
 
