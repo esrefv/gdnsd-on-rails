@@ -7,6 +7,8 @@ class RecordsController < ApplicationController
     @record = @domain.records.new(record_params)
     if @record.save
       redirect_to domain_path(@domain), notice: t(:recod_succes)
+    else
+      render 'domains/show'
     end
   end
 

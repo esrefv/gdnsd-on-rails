@@ -31,7 +31,20 @@
 				<div class="form-group">
 					<%= f.submit t('add'), class:'btn btn-info input-sm button' %>
 				</div>
+				
 			<% end %>
+		</div> 
+		<hr>
+		<div class="row">
+			<div class="col-lg-8 col-offset-lg-2">
+			<%- if @record.errors.any?%>
+				<%@record.errors.full_messages.each do |m|%>
+					<div class="alert alert-danger">
+					  	<strong><%=t('warning')%></strong><%= m %>
+					</div>
+				<%end%>
+			<%end%>
+			</div>
 		</div>
 	</div>
 </div>

@@ -2,16 +2,15 @@ class DomainsController < ApplicationController
   before_action :set_domain, only: [:show, :destroy]
 
   def new
-    @domain = Domain.new
-    @domainlast = Domain.last
-    @record = @domainlast.records.new
+    @domain = Domain.last
+    @record = @domain.records.new
   end
 
   def create
     @domain = Domain.new(domain_params)
 
     if @domain.save
-      redirect_to @domain, notice: t(:saved)
+      redirect_to :back, notice: t(:saved)
     else
       render 'domains/new'
     end
