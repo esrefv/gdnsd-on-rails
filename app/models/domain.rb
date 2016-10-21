@@ -1,7 +1,7 @@
 require 'text_file'
 class Domain < ApplicationRecord
   has_many :records, dependent: :destroy
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: { message: "Bu isimle bir Domain adı zaten mevcut.Lütfen yeni bir isim giriniz." }
   after_create :create_text_file
   after_destroy :destroy_text_file
 

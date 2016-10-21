@@ -1,7 +1,7 @@
 <div class="container" >
 	<div  class="row "> 
 		<div class="col-md-12">
-			<%= form_for [@domainlast, @record] , html: {class: 'form-inline' } do |f| %>
+			<%= form_for [@domain, @record] , html: {class: 'form-inline' } do |f| %>
 
 				<div class="form-group">
 					<%= f.label :domain_id ,type:'label', class: 'sr-only' %>
@@ -13,7 +13,7 @@
 				</div>
 				<div class="form-group">
 					<%= f.label :rtype ,type:'label', class:'sr-only'%>
-					<%=  f.select :rtype , options_for_select(@domainlast.records.rtypes.collect{|r| [r[0].humanize,r[0]]},selected: @record.rtype),{}, class:'form-control input-sm rtype',id:'record_type' %>
+					<%=  f.select :rtype , options_for_select(@domain.records.rtypes.collect{|r| [r[0].humanize,r[0]]},selected: @record.rtype),{}, class:'form-control input-sm rtype',id:'record_type' %>
 				</div>
 				<div class="form-group">
 					<%= f.label :content ,type:'label', class:'sr-only' %>

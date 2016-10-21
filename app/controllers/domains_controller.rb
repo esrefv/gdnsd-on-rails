@@ -9,10 +9,9 @@ class DomainsController < ApplicationController
 
   def create
     @domain = Domain.new(domain_params)
-     
-    if @domain.save
-      redirect_to :back, notice: t(:saved)
 
+    if @domain.save
+      redirect_to @domain, notice: t(:saved)
     else
       render 'domains/new'
     end

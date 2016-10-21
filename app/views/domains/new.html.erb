@@ -16,19 +16,20 @@
 	<div class="add-record"> 
 		<div class="row domain" >
 			<div class="domain-name" id="domain-name">
-				<div class="col-md-8 col-md-offset-2">
-					<span ><h3 ><%=link_to @domainlast.name, @domainlast %></h3></span> 	
+				<div class="col-md-12 col-md-offset-0">
+					<%- if @domain.errors.any?%>
+							<%@domain.errors.full_messages.each do |m|%>
+							<div class="alert alert-danger">
+							  <strong><%=t('warning')%></strong><%= m %>
+							</div>
+							<%end%>
+					<%else%>
+					<span ><h3 ><small><%= t('last_domain')%></small>  <%=link_to @domainlast.name, @domainlast %></h3></span> 
+					<%end%>	
 				</div>
 			</div>
 		</div>
-		<br>
-		<div class="row record-form" >
-			<div class="form" id="form">
-				<div class="col-md-11 col-md-offset-1">
-					<%= render 'records/form' %>
-				</div>
-			</div>
-		</div>
+		<%= link_to t('back'), root_path %>
 	</div>
 </div>
 

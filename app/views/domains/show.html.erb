@@ -1,5 +1,5 @@
 <div class="row">
-	<h3><%= @domain.name %>  <%= link_to t('delete') , domain_path(@domain), method: :delete ,class:'btn btn-danger' %></h3> 
+	<h3><%= @domain.name %>   <%= link_to t('delete') , domain_path(@domain), method: :delete ,class:'btn btn-danger' %></h3> 
   	<div class="col-md-8 col-md-offset-1">
 		<div class="show_form" id="form">
 			<%= render 'records/form' %>
@@ -39,7 +39,7 @@
 				<%end%>	
 			</div>
 		</div>
-	<%= link_to t('back'), root_path %>
+	 <%= link_to t('back'), root_path %>
 	</div>
 </div>
 

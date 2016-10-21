@@ -27,4 +27,5 @@ tr:
   back: "Geri Dön"
   no_record: "Henüz bu Domain için kayıtlı bir record bulunmamaktadır."
   warning: "Uyarı!"
-
+  name_be_unique: ": Bu isimle bir Domain adı zaten mevcut.Lütfen yeni bir isim giriniz."
+  last_domain: "Son Eklenen Domain:"

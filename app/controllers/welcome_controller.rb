@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 
   def index
-    @domains = Domain.all
+    @domains_count = Domain.all.count
   end
 end
