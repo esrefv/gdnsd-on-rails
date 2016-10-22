@@ -1,5 +1,31 @@
 <div class="row">
-	<h3><%= @domain.name %>   <%= link_to t('delete') , domain_path(@domain), method: :delete ,class:'btn btn-danger' %></h3> 
+	<h3><%= @domain.name %> <button type="button" id="mybtn" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal"><%=t('delete_domain')%></button> </h3> 
+  	<div class="a-modal"> 
+		  <!-- Modal -->
+		  <div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog">
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		         	<button type="button" class="close" data-dismiss="modal">&times;</button>
+		         	<h4 class="modal-title text-left alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  <%= t('u_sure') %></h4>
+		        </div>
+		        <div class="modal-body">
+		        	<p class="text-danger text-center lead"><b> <%= @domain.name %></b></p>
+		        	<p><%= t('delete_domain_warn') %></p>
+			        <div class="form-group">
+			        	<p><%= t 'type_dom_name'%></p>
+			        	<input type="text" class="form-control" id="domain_name_input">
+			         </div>		        		
+		         </div>
+		        <div class="modal-footer">
+		        	<button type="button" class="btn btn-default" data-dismiss="modal"><%= t 'close'%></button>
+		            <%= link_to t('delete_domain') , domain_path(@domain), method: :delete ,class:'btn btn-danger disabled',id:'delete_button' %>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+  	</div>
   	<div class="col-md-8 col-md-offset-1">
 		<div class="show_form" id="form">
 			<%= render 'records/form' %>

@@ -12,13 +12,14 @@ class DomainsController < ApplicationController
     if @domain.save
       redirect_to :back, notice: t(:saved)
     else
-      render 'domains/new'
+      redirect_to :back, notice: t(:name_be_unique)
     end
   end
 
   def show
     @domainlast = Domain.last
     @record = @domainlast.records.new
+    gon.domainname = @domain.name
   end
 
   def search
