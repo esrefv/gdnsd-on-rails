@@ -1,5 +1,9 @@
 <div class="row">
-	<h3><%= @domain.name %> <button type="button" id="mybtn" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal"><%=t('delete_domain')%></button> </h3> 
+	<div>
+		<h3><%= @domain.name %> </h3> 
+		<button type="button" id="mybtn" class="btn btn-danger btn-sm center-block" data-toggle="modal" data-target="#myModal"><%=t('delete_domain')%></button>
+	</div>
+	<br>
   	<div class="a-modal"> 
 		  <!-- Modal -->
 		  <div class="modal fade" id="myModal" role="dialog">
@@ -26,13 +30,17 @@
 		    </div>
 		  </div>
   	</div>
-  	<div class="col-md-8 col-md-offset-1">
+  	<div class="col-md-8 col-md-offset-2">
 		<div class="show_form" id="form">
 			<%= render 'records/form' %>
 		</div>
+		<div>
+			<i class="fa fa-home" aria-hidden="true"></i>  <%= link_to t('homepage'), root_path%>
+		</div>
+		<br>
 	</div>
 	<div class="col-md-8 col-xs-8 col-xs-offset-2 col-md-offset-2">
-		<div>
+		<div class="div-table">
 		  	<div class="table">
 		  		<%- if @domain.records.exists?%>
 				    <table class="table table-bordered table-hover">
@@ -43,19 +51,20 @@
 					        <th><%= t 'record_type' %></th>
 					        <th><%= t 'content' %></th>
 					        <th><%= t 'TTL' %></th>
-					        <th><%= t 'prio' %></th>			
+					        <th><%= t 'prio' %></th>
+					        <th><%= t 'delete' %></th>			
 					      </tr>
 					    </thead>
 					    <tbody>
 					     <% @domain.records.reject{|r| r.id.nil? }.each do |record| %>
 					      <tr>
-					        <td><%= record.id %></td>
-					        <td><%= record.name %></td>
+					        <td id="di"><%= record.id %></td>
+					        <td id="name"><%= record.name %></td>
 					        <td><%= record.rtype %></td>
-					        <td><%= record.content %></td>
+					        <td id="content"><%= record.content %></td>
 					        <td><%= record.ttl %></td>
 					        <td><%= record.prio %></td>
-					        <td><%= link_to t('delete') , [record.domain,record], method: :delete ,class:'btn btn-danger' %></td>
+					        <td><%= link_to t('delete') , [record.domain,record], method: :delete ,class:'btn btn-danger',data: {confirm: t('u_sure_record')} %></td>
 					      </tr>
 					    <%end%>
 					    </tbody>
@@ -65,7 +74,7 @@
 				<%end%>	
 			</div>
 		</div>
-	 <%= link_to t('back'), root_path %>
+
 	</div>
 </div>
 

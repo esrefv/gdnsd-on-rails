@@ -10,9 +10,11 @@ class DomainsController < ApplicationController
     @domain = Domain.new(domain_params)
 
     if @domain.save
-      redirect_to :back, notice: t(:saved)
+      flash[:success] = t(:saved)
+      redirect_to @domain
     else
-      redirect_to :back, notice: t(:name_be_unique)
+      flash[:alert] = t(:name_be_unique)
+      redirect_to :back
     end
   end
 
@@ -26,7 +28,8 @@ class DomainsController < ApplicationController
     if params[:search].present?
       @domains = Domain.search(params[:search])
     else
-      redirect_to root_path, notice: t(:blank)
+      flash[:alert] =  t(:blank)
+      redirect_to root_path
     end
   end
 

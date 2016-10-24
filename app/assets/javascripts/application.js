@@ -15,27 +15,23 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap-editable
-//= require bootstrap-editable-rails
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
 
  	$('#record_type').on('change', function() {
-		  if(this.value == "MX"){			
-				$('.prio').removeClass("hidden");	
-			}
-		  else{
-		  		$('.prio').addClass("hidden");
-		  }
+		if(this.value == "MX"){			
+			$('.prio').removeClass("hidden");	
+		}
+		else{
+		  	$('.prio').addClass("hidden");
+		}
 
 	});
 	
 	$('#domain_name_input').on('input', function() {
 		var inputval  = $('#domain_name_input').val();
-		  if (gon.domainname == inputval)
-		{	
-			var inputval  = $('#domain_name_input').val();		
+		if (gon.domainname == inputval){			
 			$('#delete_button').removeClass("disabled");	
 		}
 		else{
@@ -46,7 +42,6 @@ $(document).on('turbolinks:load', function() {
  
 });
 $(document).ready(function() {
-	 
 
       
 });

@@ -15,17 +15,16 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "bootstrap-editable";
 @import "font-awesome";
 
 h3,th {
   text-align: center;
 }
 .show_form{
-	margin-bottom:25px
+	margin-bottom:10px
 }
 .main-logo{
-	margin-top:100px;
+	margin-top:85px;
 	margin-bottom:50px;
 	width:350px;
 	height:100px;
@@ -36,4 +35,22 @@ h3,th {
 }
 .new_dom{
 	margin:25px 0px;
+}
+.flash{
+	margin-top:20px;
+}
+table{
+    table-layout: fixed;
+}
+.div-table{
+	 overflow: hidden; 
+}
+td#name{
+	word-wrap: break-word;
+}
+td#di{
+	 text-align: center;
+}
+td#content{
+	word-wrap: break-word;
 }
