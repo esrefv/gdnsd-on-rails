@@ -39,6 +39,9 @@ $(document).on('turbolinks:load', function() {
 		} 
 
 	});
+	$('#myModal').on('shown.bs.modal', function () {
+    	$('#domain_name_input').focus();
+	});
  
 });
 $(document).ready(function() {
