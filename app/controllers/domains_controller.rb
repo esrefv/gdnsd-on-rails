@@ -26,7 +26,7 @@ class DomainsController < ApplicationController
 
   def search
     if params[:search].present?
-      @domains = Domain.order('name DESC').search(params[:search])
+      @domains = Domain.order('name ASC').search(params[:search])
     else
       flash[:alert] =  t(:blank)
       redirect_to root_path
