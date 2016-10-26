@@ -19,14 +19,14 @@ class DomainsController < ApplicationController
   end
 
   def show
-    @domainlast = Domain.last
-    @record = @domainlast.records.new
+    @domain_last = Domain.last
+    @record = @domain_last.records.new
     gon.domainname = @domain.name
   end
 
   def search
     if params[:search].present?
-      @domains = Domain.search(params[:search])
+      @domains = Domain.order('name DESC').search(params[:search])
     else
       flash[:alert] =  t(:blank)
       redirect_to root_path
