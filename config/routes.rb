@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get 'search'
       get 'get_record'
     end
-    resources :records, only: [:create, :destroy]
+    resources :records, only: [:create, :destroy,:update]
   end
   
   root 'welcome#index'

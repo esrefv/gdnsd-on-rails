@@ -11,9 +11,40 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
 
+$(document).on('turbolinks:load', function() {
+
+ 	$('#record_type').on('change', function() {
+		if(this.value == "MX"){			
+			$('.prio').removeClass("hidden");	
+		}
+		else{
+		  	$('.prio').addClass("hidden");
+		}
+
+	});
+	
+	$('#domain_name_input').on('input', function() {
+		var inputval  = $('#domain_name_input').val();
+		if (gon.domainname == inputval){			
+			$('#delete_button').removeClass("disabled");	
+		}
+		else{
+		  	$('#delete_button').addClass("disabled");
+		} 
+
+	});
+	$('#myModal').on('shown.bs.modal', function () {
+    	$('#domain_name_input').focus();
+	});
+ 
+});
+$(document).ready(function() {
+
+      
+});

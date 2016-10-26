@@ -2,18 +2,17 @@
 <html>
   <head>
     <title>GdnsdRails</title>
+    <%= include_gon %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-        <%= render "layouts/navbr" %>
 	  <div class="container">
-    <div class="row">
+    <div class="row flash">
          <%= render "layouts/flash" %>
     </div>
-     
 	   		<%= yield %>
 	  </div>
   </body>

@@ -23,7 +23,7 @@ class FileProcess
     tmp_file = File.new("./" + @directory_name + "/" + text_file_name + ".txt", "w+")
     @records = Record.where(domain_id: domain_id)
     @records.each do |record|
-      if record.prio.present?
+      unless record.prio.present?
         tmp_file.puts(record.name + "\t" + record.rtype + "\t" + record.content.to_s + "\t" + record.ttl.to_s)
       else
         tmp_file.puts(record.name + "\t" + record.rtype + "\t" + record.content.to_s + "\t" + record.ttl.to_s + "\t" + record.prio.to_s)

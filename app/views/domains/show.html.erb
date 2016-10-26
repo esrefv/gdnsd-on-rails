@@ -1,41 +1,81 @@
 <div class="row">
-	<h3><%= @domain.name %>  <%= link_to t('delete') , domain_path(@domain), method: :delete ,class:'btn btn-danger' %></h3> 
-  	<div class="col-md-8 col-md-offset-1">
+	<div>
+		<h3><%= @domain.name %> </h3> 
+		<button type="button" id="mybtn" class="btn btn-danger btn-sm center-block" data-toggle="modal" data-target="#myModal"><%=t('delete_domain')%></button>
+	</div>
+  	<div class="a-modal"> 
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModal" role="dialog">
+	    <div class="modal-dialog">
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	         	<button type="button" class="close" data-dismiss="modal">&times;</button>
+	         	<h4 class="modal-title text-left alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  <%= t('u_sure') %></h4>
+	        </div>
+	        <div class="modal-body">
+	        	<p class="text-danger text-center lead"><b> <%= @domain.name %></b></p>
+	        	<p><%= t('delete_domain_warn') %></p>
+		        <div class="form-group">
+		        	<p><%= t 'type_dom_name'%></p>
+		        	<input type="text" class="form-control" id="domain_name_input">
+		         </div>		        		
+	         </div>
+	        <div class="modal-footer">
+	        	<button type="button" class="btn btn-default" data-dismiss="modal"><%= t 'close'%></button>
+	            <%= link_to t('delete_domain') , domain_path(@domain), method: :delete ,class:'btn btn-danger disabled',id:'delete_button' %>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+  	</div>
+  	<div class="col-md-8 col-md-offset-2 formlink">
 		<div class="show_form" id="form">
 			<%= render 'records/form' %>
 		</div>
+		<div class="pull-left">
+			<i class="fa fa-home" aria-hidden="true"></i>  <%= link_to t('homepage'), root_path%>
+		</div>
+		<div class="pull-right">
+			<i class="fa fa-database" aria-hidden="true"></i>  <%= link_to t('new_domain'), new_domain_path%>
+		</div>
 	</div>
 	<div class="col-md-8 col-xs-8 col-xs-offset-2 col-md-offset-2">
-		<div>
+		<div class="div-table">
 		  	<div class="table">
-			   <table class="table table-bordered table-hover">
-				    <thead>
-				      <tr>
-				        <th><%= t 'ID' %></th>
-				        <th><%= t 'record_name' %></th>
-				        <th><%= t 'record_type' %></th>
-				        <th><%= t 'content' %></th>
-				        <th><%= t 'TTL' %></th>
-				        <th><%= t 'prio' %></th>			
-				      </tr>
-				    </thead>
-				    <tbody>
-				     <% @domainn.records.reject{|r| r.id.nil? }.each do |record| %>
-				      <tr>
-				        <td><%= record.id %></td>
-				        <td><%= record.name %></td>
-				        <td><%= record.rtype %></td>
-				        <td><%= record.content %></td>
-				        <td><%= record.ttl %></td>
-				        <td><%= record.prio %></td>
-				        <td><%= link_to t('delete') , [record.domain,record], method: :delete ,class:'btn btn-danger' %></td>
-				      </tr>
-				    <%end%>
-				    </tbody>
-				  </table>
+		  		<%- if @domain.records.exists?%>
+				    <table class="table table-bordered table-hover">
+					    <thead>
+					      <tr>
+					        <th><%= t 'ID' %></th>
+					        <th><%= t 'record_name' %></th>
+					        <th><%= t 'record_type' %></th>
+					        <th><%= t 'content' %></th>
+					        <th><%= t 'TTL' %></th>
+					        <th><%= t 'prio' %></th>
+					        <th><%= t 'delete' %></th>			
+					      </tr>
+					    </thead>
+					    <tbody>
+					     <% @domain.records.order('name ASC').reject{|r| r.id.nil? }.each do |record| %>
+					      <tr>
+					        <td id="di"><%= record.id %></td>
+					        <td id="name"><%= record.name %></td>
+					        <td><%= record.rtype %></td>
+					        <td id="content"><%= record.content %></td>
+					        <td><%= record.ttl %></td>
+					        <td><%= record.prio %></td>
+					        <td><%= link_to t('delete') , [record.domain,record], method: :delete ,class:'btn btn-danger',data: {confirm: t('u_sure_record')} %></td>
+					      </tr>
+					    <%end%>
+					    </tbody>
+				    </table>
+				<%else%>
+				<h4 class="text-center"><%= t('no_record') %></h4>
+				<%end%>	
 			</div>
 		</div>
-	<%= link_to 'Back', root_path %>
+
 	</div>
 </div>
 
