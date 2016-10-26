@@ -16,6 +16,7 @@ tr:
   ttl: "TTL"
   prio: "Prio"
   domain_name: "Domain Adı"
+  domain_name: "id"
   search_placeholder: "ss"
   delete: "Sil"
   add_your_domain_name: "Eklemek istediğiniz domain ismini giriniz."
