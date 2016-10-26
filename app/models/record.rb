@@ -1,7 +1,7 @@
 require 'text_file'
 class Record < ApplicationRecord
   belongs_to :domain
-  validates :name, :rtype, :content, :ttl, presence: {:message => "alanı bos birakılamaz.."}
+  validates :name, :rtype, :content, :ttl, presence: true
   after_create :create_text_file
   after_update :create_text_file
   after_destroy :create_text_file

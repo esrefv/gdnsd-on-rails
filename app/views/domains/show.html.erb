@@ -2,6 +2,7 @@
 	<div>
 		<h3><%= @domain.name %> </h3> 
 		<button type="button" id="mybtn" class="btn btn-danger btn-sm center-block" data-toggle="modal" data-target="#myModal"><%=t('delete_domain')%></button>
+		<div id="elem"></div>
 	</div>
 	<br>
   	<div class="a-modal"> 
@@ -30,14 +31,16 @@
 		    </div>
 		  </div>
   	</div>
-  	<div class="col-md-8 col-md-offset-2">
+  	<div class="col-md-8 col-md-offset-2 formlink">
 		<div class="show_form" id="form">
 			<%= render 'records/form' %>
 		</div>
-		<div>
+		<div class="pull-left">
 			<i class="fa fa-home" aria-hidden="true"></i>  <%= link_to t('homepage'), root_path%>
 		</div>
-		<br>
+		<div class="pull-right">
+			<i class="fa fa-database" aria-hidden="true"></i>  <%= link_to t('new_domain'), new_domain_path%>
+		</div>
 	</div>
 	<div class="col-md-8 col-xs-8 col-xs-offset-2 col-md-offset-2">
 		<div class="div-table">
