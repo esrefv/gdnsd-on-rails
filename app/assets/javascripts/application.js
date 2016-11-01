@@ -20,7 +20,7 @@
 $(document).on('turbolinks:load', function() {
 
  	$('#record_type').on('change', function() {
-		if(this.value == "MX"){			
+		if(this.value == "MX" || this.value == "SOA"){
 			$('.prio').removeClass("hidden");	
 		}
 		else{
