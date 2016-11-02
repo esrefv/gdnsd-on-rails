@@ -1,6 +1,6 @@
 class FileProcess
   def initialize
-    @gdnsd = GdnsdIo::FileOperations.new({filepath: "/home/esref/aaaa"})
+    @gdnsd = GdnsdIo::FileOperations.new({filepath: APP_CONFIG['development_path']})
   end
 
   def create_file_for_domain(text_file_name, domain_id)
