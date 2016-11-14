@@ -42,7 +42,7 @@ You can define your own way here.
     
     ```ruby
      def initialize
-       @gdnsd = GdnsdIo::FileOperations.new({filepath: APP_CONFIG['development_path']})
+       @gdnsd = GdnsdIo::FileOperations.new({filepath: APP_CONFIG['production_path']})
      end
    ```
     
