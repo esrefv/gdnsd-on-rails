@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'gdnsd_io', '~> 1.0', '>= 1.0.1'
 
+gem 'simple_form'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'gon', '~> 6.0', '>= 6.0.1'

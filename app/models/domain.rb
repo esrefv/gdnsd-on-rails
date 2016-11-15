@@ -4,6 +4,8 @@ class Domain < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   after_create :create_text_file
   after_destroy :destroy_text_file
+  has_one :soa
+  accepts_nested_attributes_for :soa
 
   def self.search(q)
     q = "%#{q.downcase}%"

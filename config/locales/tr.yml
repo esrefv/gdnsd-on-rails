@@ -37,3 +37,6 @@ tr:
   close: "Iptal"
   record_not_valid: "Uyarı!! Isim, content ve TTL alanları bos bıraklamaz.."
   u_sure_record: "Bu Recordu silmek istediğinizden emin misiniz?"
+  soa_succes: "SOA başarıyla olusturuldu"
+  soa_not_valid: "Uyarı!! Hiç bir alan boş bıraklamaz.."
+  edit_domain: "Domain SOA Güncelle"

@@ -1,9 +1,9 @@
 class DomainsController < ApplicationController
-  before_action :set_domain, only: [:show, :destroy]
+  before_action :set_domain, only: [:show,:update,:edit,:destroy]
 
   def new
-    @domain = Domain.last
-    @record = @domain.records.new
+    @domain = Domain.new
+    @domain.build_soa
   end
 
   def create
@@ -41,13 +41,30 @@ class DomainsController < ApplicationController
   def index
     @domains = Domain.all
   end
-private
 
-  def domain_params
-    params.require(:domain).permit(:name)
+  def edit
+
   end
+
+  def update
+    if @domain.update(domain_params)
+      redirect_to domain_path(@domain)
+    else
+      load_categories
+      render :edit
+    end
+  end
+
+
+  private
 
   def set_domain
     @domain = Domain.find(params[:id])
   end
+
+  def domain_params
+    params.require(:domain).permit(:name, soa_attributes:[:id, :nameserver1, :nameserver2, :email, :serial_number,
+                                                          :refresh, :retry, :expire, :ttl_default, :ttl_min])
+  end
+
 end
