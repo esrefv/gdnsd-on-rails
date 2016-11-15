@@ -13,7 +13,7 @@
   
 * Following photo shows the relationship between the tables.
  
-  ![relationship](docs/image/table_relationship.png)
+  ![relationship](docs/image/table_relation.png)
   
 ## FAQ
 
