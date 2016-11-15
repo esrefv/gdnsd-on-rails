@@ -1,10 +1,10 @@
 class FileProcess
   def initialize
-    @directory_name = "text"
-    Dir.mkdir(@directory_name) unless File.exists?(@directory_name)
+    @gdnsd = GdnsdIo::FileOperations.new({filepath: APP_CONFIG['development_path']})
   end
 
   def create_file_for_domain(text_file_name, domain_id)
+    @gdnsd.create_text(text_file_name)
     write_records_create_file(domain_id, text_file_name)
   end
 
@@ -14,22 +14,13 @@ class FileProcess
   end
 
   def delete_file(text_file_name)
-    File.delete( "./text/" + text_file_name + ".txt")
+    @gdnsd.delete_text(text_file_name)
   end
 
   private
 
   def write_records_create_file (domain_id, text_file_name)
-    tmp_file = File.new("./" + @directory_name + "/" + text_file_name + ".txt", "w+")
     @records = Record.where(domain_id: domain_id)
-    @records.each do |record|
-      unless record.prio.present?
-        tmp_file.puts(record.name + "\t" + record.rtype + "\t" + record.content.to_s + "\t" + record.ttl.to_s)
-      else
-        tmp_file.puts(record.name + "\t" + record.rtype + "\t" + record.content.to_s + "\t" + record.ttl.to_s + "\t" + record.prio.to_s)
-      end
-    end
-    tmp_file.close
+    @gdnsd.write_record(@records, text_file_name)
   end
-
 end

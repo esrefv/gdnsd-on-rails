@@ -21,6 +21,31 @@
 
 Logo named logo.png is in the assets/images folder. If you want to change log, you can change image in the assets/image folder.
 
+## How To Use
+
+1. You can see 'config_gdnsd.yml' in config folder. 
+
+     development_path: /your/development/path
+        
+     production_path: /your/production/path
+   
+You can define your own way here. 
+
+2. You can use in 'lib/text_file.rb' 
+
+   ```ruby
+     def initialize
+       @gdnsd = GdnsdIo::FileOperations.new({filepath: APP_CONFIG['development_path']})
+     end
+    ```
+    or
+    
+    ```ruby
+     def initialize
+       @gdnsd = GdnsdIo::FileOperations.new({filepath: APP_CONFIG['production_path']})
+     end
+   ```
+    
 ## Contributing
 
 Once you've made your great commits:
