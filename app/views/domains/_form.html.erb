@@ -1,28 +1,28 @@
 <%= form_for @domain do |f| %>
-    <%= f.label :name%>
-    <%= f.text_field :name, placeholder: 'name', class: "form-control input-sm" %><br/>
+    <%= f.label "Domain Name"%>
+    <%= f.text_field :name, class: "form-control input-sm" %><br/>
 
     <%=f.fields_for :soa do |sf| %>
         <%= sf.label :nameserver1%>
-        <%= sf.text_field :nameserver1, placeholder: 'nameserver1', class: "form-control input-sm" %><br />
+        <%= sf.text_field :nameserver1, class: "form-control input-sm" %>
         <%= sf.label :nameserver2%>
-        <%= sf.text_field :nameserver2, placeholder: 'nameserver2', class: "form-control input-sm" %><br />
+        <%= sf.text_field :nameserver2, class: "form-control input-sm" %>
         <%= sf.label :email%>
-        <%= sf.text_field :email, placeholder: 'email', class: "form-control input-sm" %><br />
+        <%= sf.text_field :email, class: "form-control input-sm" %>
         <%= sf.label :serial_number%>
-        <%= sf.text_field :serial_number, placeholder: 'serial_number', class: "form-control input-sm" %><br />
+        <%= sf.text_field :serial_number, class: "form-control input-sm" %>
         <%= sf.label :refresh%>
-        <%= sf.text_field :refresh, placeholder: 'refresh', class: "form-control input-sm" %><br />
+        <%= sf.text_field :refresh, class: "form-control input-sm" %>
         <%= sf.label :retry%>
-        <%= sf.text_field :retry, placeholder: 'retry', class: "form-control input-sm" %><br />
+        <%= sf.text_field :retry, class: "form-control input-sm" %>
         <%= sf.label :expire%>
-        <%= sf.text_field :expire, placeholder: 'expire', class: "form-control input-sm" %><br />
+        <%= sf.text_field :expire, class: "form-control input-sm" %>
         <%= sf.label :ttl_default%>
-        <%= sf.text_field :ttl_default, placeholder: 'ttl_default', class: "form-control input-sm" %><br />
+        <%= sf.text_field :ttl_default, class: "form-control input-sm" %>
         <%= sf.label :ttl_min%>
-        <%= sf.text_field :ttl_min, placeholder: 'ttl_min', class: "form-control input-sm" %><br />
+        <%= sf.text_field :ttl_min, class: "form-control input-sm" %>
     <%end%>
-
+    <br/>
     <%= f.submit 'Gonder'%>
 
 <%end%>

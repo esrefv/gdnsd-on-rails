@@ -4,7 +4,7 @@ class Domain < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   after_create :create_text_file
   after_destroy :destroy_text_file
-  has_one :soa
+  has_one :soa, dependent: :destroy
   accepts_nested_attributes_for :soa
 
   def self.search(q)
