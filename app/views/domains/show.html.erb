@@ -2,7 +2,10 @@
 	<div>
 		<h3><%= @domain.name %> </h3>
 		<button type="button" id="mybtn" class="btn btn-danger btn-sm center-block" data-toggle="modal" data-target="#myModal"><%=t('delete_domain')%></button>
-	</div>
+    <div align="center">
+      <i class="fa fa-cog" aria-hidden="true"></i>  <%= link_to t('edit_domain'), edit_domain_path%>
+    </div>
+  </div>
   	<div class="a-modal">
 	  <!-- Modal -->
 	  <div class="modal fade" id="myModal" role="dialog">
@@ -36,6 +39,7 @@
 		<div class="pull-left">
 			<i class="fa fa-home" aria-hidden="true"></i>  <%= link_to t('homepage'), root_path%>
 		</div>
+
 		<div class="pull-right">
 			<i class="fa fa-database" aria-hidden="true"></i>  <%= link_to t('new_domain'), new_domain_path%>
 		</div>
