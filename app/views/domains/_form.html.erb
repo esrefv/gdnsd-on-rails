@@ -1,5 +1,5 @@
 <%= form_for @domain do |f| %>
-    <%= f.label "Domain Name"%>
+    <%= f.label t('domain_name')%>
     <%= f.text_field :name, class: "form-control input-sm" %><br/>
 
     <%=f.fields_for :soa do |sf| %>
@@ -23,6 +23,6 @@
         <%= sf.text_field :ttl_min, class: "form-control input-sm" %>
     <%end%>
     <br/>
-    <%= f.submit 'Gonder'%>
+    <%= f.submit t('send')%>
 
 <%end%>

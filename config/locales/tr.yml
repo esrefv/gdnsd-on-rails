@@ -40,3 +40,5 @@ tr:
   soa_succes: "SOA başarıyla olusturuldu"
   soa_not_valid: "Uyarı!! Hiç bir alan boş bıraklamaz.."
   edit_domain: "Domain SOA Güncelle"
+  domain_name: "Domain Name"
+  send: "Gönder"
