@@ -6,14 +6,14 @@
 
     Enum values which are in this project for RR types like the following: 
 
-    SOA: 0, A: 1, AAAA: 2, NS: 3, PTR: 4, CNAME: 5, MX: 6, SRV: 7, TXT: 8, NAPTR: 9
+    A: 0, AAAA: 1, NS: 2, PTR: 3, CNAME: 4, MX: 5, SRV: 6, TXT: 7, NAPTR: 8
 
 * There are two model named Record and Domain. Record table keeps columns named name, rtype, content, ttl.  
   But "MX" RR type keep also prio column. Domain table only keeps the name column.
   
 * Following photo shows the relationship between the tables.
  
-  ![relationship](docs/image/table_relationship.png)
+  ![relationship](app/assets/images/table_relation.png)
   
 ## FAQ
 
