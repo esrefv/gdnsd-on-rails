@@ -12,6 +12,12 @@ bulutfon = Domain.create(name: 'bulutfon.net')
 superni = Domain.create(name: 'superni.net')
 
 
+bulutfon.create_soa(nameserver1: "bulutfon1.net.ni", nameserver2: "bulutfon2.net.ni", email: "hostmaster.bulutfon.net",
+                     serial_number: 1012021300, refresh:"3H", retry: "5m", expire: "1w", ttl_min: "3h", ttl_default: 86400)
+
+superni.create_soa(nameserver1: "superni1.net.ni", nameserver2: "superni2.net.ni", email: "hostmaster.superni.net",
+                  serial_number: 1020101100, refresh:"3H", retry: "5m", expire: "1w", ttl_min: "3h", ttl_default: 86400)
+
 bulutfon.records.create(name: 'bulutfon.net', rtype: 6, content: 'x', ttl: '600', prio: '0')
 bulutfon.records.create(name: 'dns1-dnz1.bulutfon.net', rtype: 1, content: '95.173.187.238', ttl: '600', prio: '0')
 bulutfon.records.create(name: 'fs3-dnz2.bulutfon.net', rtype: 1, content: '31.192.208.198', ttl: '600', prio: '0')
