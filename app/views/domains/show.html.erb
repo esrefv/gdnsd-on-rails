@@ -61,7 +61,7 @@
 					      </tr>
 					    </thead>
 					    <tbody>
-					     <% @domain.records.order('name ASC').reject{|r| r.id.nil? }.each do |record| %>
+					     <% @domain.records.order('id').reject{|r| r.id.nil? }.each do |record| %>
 					      <tr>
 					        <td id="di"><%= record.id %></td>
 					        <td id="name"><%= record.name %></td>

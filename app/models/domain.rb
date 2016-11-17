@@ -3,6 +3,7 @@ class Domain < ApplicationRecord
   has_many :records, dependent: :destroy
   validates :name, presence: true, uniqueness: true
   after_create :create_text_file
+  after_update :create_text_file
   after_destroy :destroy_text_file
   has_one :soa, dependent: :destroy
   accepts_nested_attributes_for :soa
