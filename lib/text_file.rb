@@ -21,9 +21,6 @@ class FileProcess
   def write_records_create_file (domain_id, text_file_name)
     @records = Record.where(domain_id: domain_id)
     @soas = Soa.where(domain_id: domain_id)
-    @soas.each do |soa|
-      soa[:nameserver1].to_s
-    end
     @gdnsd.write_soa_record(@soas, @records, text_file_name)
   end
 end
