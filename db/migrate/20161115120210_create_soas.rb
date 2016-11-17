@@ -5,7 +5,7 @@ class CreateSoas < ActiveRecord::Migration[5.0]
       t.string :nameserver1
       t.string :nameserver2
       t.string :email
-      t.integer :serial_number
+      t.integer :serial_number, :limit => 8
       t.string :refresh, default: "3H"
       t.string :retry, default: "5m"
       t.string :expire, default: "1w"

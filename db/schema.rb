@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20161115120210) do
     t.string   "nameserver1"
     t.string   "nameserver2"
     t.string   "email"
-    t.integer  "serial_number"
+    t.bigint   "serial_number"
     t.string   "refresh",       default: "3H"
     t.string   "retry",         default: "5m"
     t.string   "expire",        default: "1w"
