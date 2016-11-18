@@ -9,7 +9,6 @@ class RecordsController < ApplicationController
       flash[:success] =  t(:record_succes)
       redirect_to domain_path(@domain)
     else
-      flash[:alert] = t(:record_not_valid)
       redirect_to domain_path(@domain)
     end
   end

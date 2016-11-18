@@ -1,14 +1,17 @@
 <%= simple_form_for @domain do |f| %>
     <%= f.label t('domain_name')%>
     <%= f.text_field :name, class: "form-control input-sm" %><br/>
-
+    <%= f.error :name%><br>
     <%=f.fields_for :soa do |sf| %>
         <%= sf.label :nameserver1%>
-        <%= sf.text_field :nameserver1, class: "form-control input-sm" %><br>
+        <%= sf.text_field :nameserver1, class: "form-control input-sm" %>
+        <%= sf.error :nameserver1%><br>
         <%= sf.label :nameserver2%>
-        <%= sf.text_field :nameserver2, class: "form-control input-sm" %><br>
+        <%= sf.text_field :nameserver2, class: "form-control input-sm" %>
+        <%= sf.error :nameserver2%><br>
         <%= sf.label :email%>
-        <%= sf.text_field :email, class: "form-control input-sm" %><br>
+        <%= sf.text_field :email, class: "form-control input-sm" %>
+        <%= sf.error :email%><br>
         <%= sf.label :serial_number%>
         <%= sf.text_field :serial_number, class: "form-control input-sm", :disabled => true %><br>
         <%= sf.label :refresh%>
