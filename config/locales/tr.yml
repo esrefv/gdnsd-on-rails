@@ -24,6 +24,8 @@ tr:
           attributes:
             name:
               blank: "Domain Adı Boş kalamaz!"
+              taken: "Domain Adı Benzersiz Olmalı!"
+
 
   new_domain: "Yeni Domain Ekle"
   search: "Ara"
@@ -47,7 +49,7 @@ tr:
 
   soa_succes: "SOA başarıyla olusturuldu"
   soa_not_valid: "Uyarı!! Hiç bir alan boş bıraklamaz.."
-  edit_domain: "Domain SOA Güncelle"
+  edit_domain: "Domaini Güncelle"
   send: "Gönder"
 
   domain_name: "Domain Adı"

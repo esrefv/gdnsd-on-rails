@@ -13,13 +13,13 @@ class DomainsController < ApplicationController
       flash[:success] = t(:saved)
       redirect_to @domain
     else
-      redirect_to :back
+      render :new
     end
   end
 
   def show
-    @domain_last = Domain.last
-    @record = @domain_last.records.new
+    @domain = Domain.find(params[:id])
+    @record = @domain.records.new
     gon.domainname = @domain.name
   end
 
