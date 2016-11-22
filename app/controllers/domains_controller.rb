@@ -10,7 +10,7 @@ class DomainsController < ApplicationController
     @domain = Domain.new(domain_params)
 
     if @domain.save
-      flash[:success] = t(:saved)
+      flash[:success] = t('activerecord.attributes.domain.saved')
       redirect_to @domain
     else
       render :new
@@ -27,7 +27,7 @@ class DomainsController < ApplicationController
     if params[:search].present?
       @domains = Domain.order('id').search(params[:search])
     else
-      flash[:alert] =  t(:blank)
+      flash[:alert] =  t('activerecord.attributes.domain.blank')
       redirect_to root_path
     end
   end

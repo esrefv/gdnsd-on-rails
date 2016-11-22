@@ -6,10 +6,10 @@ class RecordsController < ApplicationController
   def create
     @record = @domain.records.new(record_params)
     if @record.save
-      flash[:success] =  t(:record_succes)
+      flash[:success] =  t('activerecord.attributes.record.record_succes')
       redirect_to domain_path(@domain)
     else
-      flash[:alert] =  t(:record_not_valid)
+      flash[:alert] =  t('activerecord.attributes.record.record_not_valid')
       redirect_to domain_path(@domain)
     end
   end

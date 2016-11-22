@@ -1,5 +1,5 @@
 <%= simple_form_for @domain do |f| %>
-    <%= f.label t('domain_name')%>
+    <%= f.label t('activerecord.attributes.domain.domain_name')%>
     <%= f.text_field :name, class: "form-control input-sm" %>
     <%= f.error :name%><br>
     <%=f.fields_for :soa do |sf| %>
@@ -26,6 +26,6 @@
         <%= sf.text_field :ttl_min, class: "form-control input-sm" %><br>
     <%end%>
     <br/>
-    <%= f.submit t('send')%>
+    <%= f.submit t('activerecord.attributes.domain.send')%>
 
 <%end%>

@@ -9,7 +9,7 @@
 				</div>
 				<div class="form-group">
 					<%= f.label :name ,type:'label', class:'sr-only' %>
-					<%= f.text_field :name , class:'form-control input-sm', :placeholder => t('record_name')%>
+					<%= f.text_field :name , class:'form-control input-sm', :placeholder => t('activerecord.attributes.record.record_name')%>
 				</div>
 				<div class="form-group">
 					<%= f.label :rtype ,type:'label', class:'sr-only'%>
@@ -17,18 +17,18 @@
 				</div>
 				<div class="form-group">
 					<%= f.label :content ,type:'label', class:'sr-only' %>
-					<%= f.text_field :content ,type:'input', class:'form-control input-sm', :placeholder => t('content')%>
+					<%= f.text_field :content ,type:'input', class:'form-control input-sm', :placeholder => t('activerecord.attributes.record.content')%>
 				</div>
 				<div class="form-group">
 				<%= f.label :ttl, type:'label', class:'sr-only' %>
-					<%= f.text_field :ttl ,type:'number', class:'form-control input-sm', :placeholder => t('ttl')%>
+					<%= f.text_field :ttl ,type:'number', class:'form-control input-sm', :placeholder => t('activerecord.attributes.record.ttl')%>
 				</div>
 				<div class="form-group tog">
 					<%= f.label :prio , type:'label', class:'sr-only' %>
-					<%= f.text_field :prio , type:'number', class:'form-control input-sm prio hidden',id:'prio', :placeholder => t('prio')%>
+					<%= f.text_field :prio , type:'number', class:'form-control input-sm prio hidden',id:'prio', :placeholder => t('activerecord.attributes.record.prio')%>
 				</div>
 				<div class="form-group">
-					<%= f.submit t('add'), class:'btn btn-info input-sm button' %>
+					<%= f.submit t('activerecord.attributes.record.add'), class:'btn btn-info input-sm button' %>
 				</div>
 				
 			<% end %>
