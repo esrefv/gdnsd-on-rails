@@ -1,6 +1,6 @@
 <%= simple_form_for @domain do |f| %>
     <%= f.label t('domain_name')%>
-    <%= f.text_field :name, class: "form-control input-sm" %><br/>
+    <%= f.text_field :name, class: "form-control input-sm" %>
     <%= f.error :name%><br>
     <%=f.fields_for :soa do |sf| %>
         <%= sf.label :nameserver1%>
