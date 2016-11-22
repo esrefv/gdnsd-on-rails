@@ -1,34 +1,33 @@
 class DomainsController < ApplicationController
-  before_action :set_domain, only: [:show, :destroy]
+  before_action :set_domain, only: [:show,:update,:edit,:destroy]
 
   def new
-    @domain = Domain.last
-    @record = @domain.records.new
+    @domain = Domain.new
+    @domain.build_soa
   end
 
   def create
     @domain = Domain.new(domain_params)
 
     if @domain.save
-      flash[:success] = t(:saved)
+      flash[:success] = t('activerecord.attributes.domain.saved')
       redirect_to @domain
     else
-      flash[:alert] = t(:name_be_unique)
-      redirect_to :back
+      render :new
     end
   end
 
   def show
-    @domain_last = Domain.last
-    @record = @domain_last.records.new
+    @domain = Domain.find(params[:id])
+    @record = @domain.records.new
     gon.domainname = @domain.name
   end
 
   def search
     if params[:search].present?
-      @domains = Domain.order('name ASC').search(params[:search])
+      @domains = Domain.order('id').search(params[:search])
     else
-      flash[:alert] =  t(:blank)
+      flash[:alert] =  t('activerecord.attributes.domain.blank')
       redirect_to root_path
     end
   end
@@ -41,13 +40,29 @@ class DomainsController < ApplicationController
   def index
     @domains = Domain.all
   end
-private
 
-  def domain_params
-    params.require(:domain).permit(:name)
+  def edit
+
   end
+
+  def update
+    if @domain.update(domain_params)
+      redirect_to domain_path(@domain)
+    else
+      render :edit
+    end
+  end
+
+
+  private
 
   def set_domain
     @domain = Domain.find(params[:id])
   end
+
+  def domain_params
+    params.require(:domain).permit(:name, soa_attributes:[:id, :nameserver1, :nameserver2, :email, :serial_number,
+                                                          :refresh, :retry, :expire, :ttl_default, :ttl_min])
+  end
+
 end

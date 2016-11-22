@@ -1,0 +1,31 @@
+<%= simple_form_for @domain do |f| %>
+    <%= f.label t('activerecord.attributes.domain.domain_name')%>
+    <%= f.text_field :name, class: "form-control input-sm" %>
+    <%= f.error :name%><br>
+    <%=f.fields_for :soa do |sf| %>
+        <%= sf.label :nameserver1%>
+        <%= sf.text_field :nameserver1, class: "form-control input-sm" %>
+        <%= sf.error :nameserver1%><br>
+        <%= sf.label :nameserver2%>
+        <%= sf.text_field :nameserver2, class: "form-control input-sm" %>
+        <%= sf.error :nameserver2%><br>
+        <%= sf.label :email%>
+        <%= sf.text_field :email, class: "form-control input-sm" %>
+        <%= sf.error :email%><br>
+        <%= sf.label :serial_number%>
+        <%= sf.text_field :serial_number, class: "form-control input-sm", :disabled => true %><br>
+        <%= sf.label :refresh%>
+        <%= sf.text_field :refresh, class: "form-control input-sm" %><br>
+        <%= sf.label :retry%>
+        <%= sf.text_field :retry, class: "form-control input-sm" %><br>
+        <%= sf.label :expire%>
+        <%= sf.text_field :expire, class: "form-control input-sm" %><br>
+        <%= sf.label :ttl_default%>
+        <%= sf.text_field :ttl_default, class: "form-control input-sm" %><br>
+        <%= sf.label :ttl_min%>
+        <%= sf.text_field :ttl_min, class: "form-control input-sm" %><br>
+    <%end%>
+    <br/>
+    <%= f.submit t('activerecord.attributes.domain.send')%>
+
+<%end%>

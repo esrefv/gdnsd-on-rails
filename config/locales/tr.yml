@@ -1,39 +1,27 @@
 
 ---
 tr:
-  hello: "Merhaba Dünya"
-  new_domain: "Yeni Domain Ekle"
-  add: "Ekle"
-  search: "Ara"
-  saved: "Domain başarıyla oluşturuldu."
-  search_results: "Arama Sonuçları"
-  homepage: "Ana Sayfa"
-  blank: "Aradığınız kriterlere uygun sonuç bulunmamaktadır."
-  ID: "ID"
-  record_name: "Record Adı"
-  record_type: "Record Tipi"
-  content: "Content"
-  ttl: "TTL"
-  prio: "Prio"
-  domain_name: "Domain Adı"
-  domain_name: "id"
-  search_placeholder: "ss"
-  delete: "Sil"
-  add_your_domain_name: "Eklemek istediğiniz domain ismini giriniz."
-  search_with_domain_name: "Domain ismi ile arama yapınız."
-  number_of_record: "Record Sayısı"
-  add_domain_page: "Domain Ekleme Sayfası"
-  record_succes: "Record başarıyla olusturuldu"
-  total_domain: "Adet Domain.."
-  back: "Geri Dön"
-  no_record: "Henüz bu Domain için kayıtlı bir record bulunmamaktadır."
-  warning: "Uyarı!"
-  name_be_unique: "Bu isimle bir Domain adı zaten mevcut.Lütfen yeni bir isim giriniz."
-  last_domain: "Son Eklenen Domain:"
-  delete_domain: "Bu Domaini Sil"
-  u_sure: "Bu Domaini silmek istediğinizden emin misiniz?"
-  delete_domain_warn: "Uyarı! Bu işlem geri alınamaz.Silme işlemi sonucunda bu domaine ait tüm recordlar kalıcı olarak silinecektir."
-  type_dom_name: "Lütfen doğrulamak için domain isimini  giriniz."
-  close: "Iptal"
-  record_not_valid: "Uyarı!! Isim, content ve TTL alanları bos bıraklamaz.."
-  u_sure_record: "Bu Recordu silmek istediğinizden emin misiniz?"
+  activerecord:
+    errors:
+      models:
+        soa:
+          attributes:
+            email:
+              blank: "Email boş kalamaz!"
+            nameserver1:
+              blank: "Nameserver1 boş kalamaz!"
+            nameserver2:
+              blank: "Nameserver2 boş kalamaz!"
+        record:
+          attributes:
+            content:
+              blank: "Content Boş kalamaz!"
+            ttl:
+              blank: "TTL Boş kalamaz!"
+            name:
+              blank: "Name Boş kalamaz!"
+        domain:
+          attributes:
+            name:
+              blank: "Domain Adı Boş kalamaz!"
+              taken: "Domain Adı Benzersiz Olmalı!"

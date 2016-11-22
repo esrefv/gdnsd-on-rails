@@ -19,11 +19,8 @@
 
 $(document).on('turbolinks:load', function() {
 
-    if($('#record_type').val() == "SOA"){
-        $('.prio').removeClass("hidden");
-    }
  	$('#record_type').on('change', function() {
-		if(this.value == "MX" || this.value == "SOA"){
+		if(this.value == "MX" ){
 			$('.prio').removeClass("hidden");
 		}
 		else{

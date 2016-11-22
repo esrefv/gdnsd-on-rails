@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013105015) do
+ActiveRecord::Schema.define(version: 20161115120210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,5 +33,22 @@ ActiveRecord::Schema.define(version: 20161013105015) do
     t.index ["domain_id"], name: "index_records_on_domain_id", using: :btree
   end
 
+  create_table "soas", force: :cascade do |t|
+    t.integer  "domain_id"
+    t.string   "nameserver1"
+    t.string   "nameserver2"
+    t.string   "email"
+    t.bigint   "serial_number"
+    t.string   "refresh",       default: "3H"
+    t.string   "retry",         default: "5m"
+    t.string   "expire",        default: "1w"
+    t.integer  "ttl_default",   default: 86400
+    t.string   "ttl_min",       default: "3h"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["domain_id"], name: "index_soas_on_domain_id", using: :btree
+  end
+
   add_foreign_key "records", "domains"
+  add_foreign_key "soas", "domains"
 end

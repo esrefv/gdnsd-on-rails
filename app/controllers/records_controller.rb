@@ -6,10 +6,10 @@ class RecordsController < ApplicationController
   def create
     @record = @domain.records.new(record_params)
     if @record.save
-      flash[:success] =  t(:record_succes)
+      flash[:success] =  t('activerecord.attributes.record.record_succes')
       redirect_to domain_path(@domain)
     else
-      flash[:alert] = t(:record_not_valid)
+      flash[:alert] =  t('activerecord.attributes.record.record_not_valid')
       redirect_to domain_path(@domain)
     end
   end
@@ -20,20 +20,6 @@ class RecordsController < ApplicationController
     redirect_to domain_path(@domain)
   end
 
-  def update
-    #if @record.update(record_params)
-     # redirect_to domain_path(@domain)
-    #end
-    respond_to do |format|
-      if @record.update_attributes(record_params)
-        format.html { redirect_to @record, notice: 'record was successfully updated.' }
-        format.json { respond_with_bip(@record) } 
-      else
-        format.html { render action: "edit" }
-        format.json { respond_with_bip(@record) }
-      end
-    end
-  end
 
 private
 

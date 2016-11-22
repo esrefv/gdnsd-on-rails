@@ -1,0 +1,40 @@
+
+---
+tr:
+  activerecord:
+    attributes:
+      domain:
+        id: Domain ID
+        new_domain: Yeni Domain Ekle
+        search: Ara
+        saved: Domain başarıyla oluşturuldu.
+        search_results: Arama Sonuçları
+        blank: Aradığınız kriterlere uygun sonuç bulunmamaktadır.
+        search_with_domain_name: Domain ismi ile arama yapınız.
+        total_domain: Adet Domain..
+        delete_domain: Bu Domaini Sil
+        u_sure: Bu Domaini silmek istediğinizden emin misiniz?
+        close: İptal
+        edit_domain: Domaini Güncelle
+        send: Gönder
+        domain_name: Domain Adı
+        homepage: Ana Sayfa
+        back: Geri Dön
+        warning: Uyarı!
+        delete_domain_warn: Uyarı! Bu işlem geri alınamaz.Silme işlemi sonucunda bu domaine ait tüm recordlar kalıcı olarak silinecektir.
+        type_domain_name: Lütfen doğrulamak için domain isimini  giriniz.
+      record:
+        ID: ID
+        record_name: Record Adı
+        record_type: Record Tipi
+        content: Content
+        ttl: TTL
+        prio: Prio
+        delete: Sil
+        number_of_record: Record Sayısı
+        record_succes: Record başarıyla olusturuldu
+        no_record: Henüz bu Domain için kayıtlı bir record bulunmamaktadır.
+        record_not_valid: Uyarı!! Isim, content ve TTL alanları bos bıraklamaz..
+        u_sure_record: Bu Recordu silmek istediğinizden emin misiniz?
+        add: Ekle
+      soa:
