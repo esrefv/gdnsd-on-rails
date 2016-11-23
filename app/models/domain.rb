@@ -5,6 +5,8 @@ class Domain < ApplicationRecord
   after_create :create_text_file
   after_update :create_text_file, :delete_before_file
   after_destroy :destroy_text_file
+  before_create :serial
+  before_update :serial
   has_one :soa, dependent: :destroy
   accepts_nested_attributes_for :soa
 
@@ -32,5 +34,9 @@ class Domain < ApplicationRecord
       process = FileProcess.new
       process.delete_file(self.changes[:name][0])
     end
+  end
+
+  def serial
+    self.soa.serial_number = Time.now.to_i
   end
 end
