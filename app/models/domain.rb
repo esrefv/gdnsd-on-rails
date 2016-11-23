@@ -37,6 +37,8 @@ class Domain < ApplicationRecord
   end
 
   def serial
-    self.soa.serial_number = Time.now.to_i
+    unless self.soa.nil?
+      self.soa.serial_number = Time.now.to_i
+    end
   end
 end
