@@ -2,11 +2,9 @@ require 'text_file'
 class Record < ApplicationRecord
   belongs_to :domain
   validates :name, :rtype, :content, :ttl, presence: true
-  after_create :create_text_file
+  after_create :create_text_file, :serial
   after_update :create_text_file
-  after_destroy :create_text_file
-  before_create :serial
-  before_destroy :serial
+  after_destroy :create_text_file, :serial
 
   enum rtype: { A: 0, AAAA: 1, NS: 2, PTR: 3, CNAME: 4, MX: 5, SRV: 6, TXT: 7, NAPTR: 8}
 

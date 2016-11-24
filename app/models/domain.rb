@@ -2,11 +2,9 @@ require 'text_file'
 class Domain < ApplicationRecord
   has_many :records, dependent: :destroy
   validates :name, presence: true, uniqueness: true
-  after_create :create_text_file
-  after_update :create_text_file, :delete_before_file
+  after_create :create_text_file, :serial
+  after_update :create_text_file, :delete_before_file, :serial
   after_destroy :destroy_text_file
-  before_create :serial
-  before_update :serial
   has_one :soa, dependent: :destroy
   accepts_nested_attributes_for :soa
 
