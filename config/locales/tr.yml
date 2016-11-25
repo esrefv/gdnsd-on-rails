@@ -25,3 +25,5 @@ tr:
             name:
               blank: "Domain Adı Boş kalamaz!"
               taken: "Domain Adı Benzersiz Olmalı!"
+            records:
+              invalid: "Boş kalamaz"
