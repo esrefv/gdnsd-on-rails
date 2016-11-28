@@ -9,7 +9,7 @@ class RecordsController < ApplicationController
       flash[:success] =  t('activerecord.attributes.record.record_succes')
       redirect_to domain_path(@domain)
     else
-      flash[:alert] =  t('activerecord.attributes.record.record_not_valid')
+      flash[:alert] = @record.errors.full_messages.join(", ")
       redirect_to domain_path(@domain)
     end
   end
