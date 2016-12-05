@@ -19,7 +19,7 @@ class Record < ApplicationRecord
 
   def check_content
     if rtype == "A" || rtype == "AAAA"
-      validates_format_of :content, :multiline => true, :with=> /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/
+      validates_format_of :content, :multiline => true, :with => Regexp.union(Resolv::IPv4::Regex, Resolv::IPv6::Regex)
     end
   end
 
