@@ -1,6 +1,6 @@
 GIT
   remote: git@bitbucket.org:lab2023corp/gdnsd-io.git
-  revision: 70330ab7ab2379b8f383fc48c1954c5c2c7bd35e
+  revision: 5203fa2e3529af233b6c80d0e2036b3c8833b4bb
   branch: develop
   specs:
     gdnsd_io (1.4.0)
