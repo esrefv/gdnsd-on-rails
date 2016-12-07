@@ -3,7 +3,7 @@ class Record < ApplicationRecord
   belongs_to :domain
   validates :name, :rtype, :content, :ttl, presence: true
   validate :check_content
-
+  validates_format_of :name, :multiline => true, :with => /(?=^.{4,253}$)(^((?!-)[a-zA-Z0-9-]{1,63}(?<!-)\.)+[a-zA-Z]{2,63}\.?$)/
   after_create :create_text_file, :serial
   after_update :create_text_file
   after_destroy :create_text_file, :serial
