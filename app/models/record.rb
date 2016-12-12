@@ -1,12 +1,15 @@
 require 'text_file'
 class Record < ApplicationRecord
+  #Relations
   belongs_to :domain
-  validates :rtype, :content, :ttl, presence: true
 
+  #Validations
+  validates :rtype, :content, :ttl, presence: true
   REGEX_DOMAIN_NAME = /(?=^.{4,253}$)(^((?!-)[a-zA-Z0-9-]{1,63}(?<!-)\.)+[a-zA-Z]{2,63}\.?$)/
   validates :name, presence: true, format: { with: REGEX_DOMAIN_NAME }
-
   validate :check_content
+
+  #Callbacks
   after_create :create_text_file, :serial
   after_update :create_text_file
   after_destroy :create_text_file, :serial

@@ -1,12 +1,18 @@
 require 'text_file'
 class Domain < ApplicationRecord
+  #Relations
   has_many :records, dependent: :destroy
+  has_one :soa, dependent: :destroy
+  accepts_nested_attributes_for :soa
+
+  #Validations
   validates :name, presence: true, uniqueness: true
+
+  #Callbacks
   after_create :create_text_file, :serial
   after_update :create_text_file, :delete_before_file, :serial
   after_destroy :destroy_text_file
-  has_one :soa, dependent: :destroy
-  accepts_nested_attributes_for :soa
+
 
   def self.search(q)
     q = "%#{q.downcase}%"
