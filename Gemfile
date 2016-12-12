@@ -26,7 +26,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 
 gem 'gdnsd_io', '~> 1.0', :git => 'git@bitbucket.org:lab2023corp/gdnsd-io.git', :branch => 'develop'
-gem 'activemodel-ipaddr_validator'
 gem 'simple_form'
 gem 'i18n'
 # Use ActiveModel has_secure_password

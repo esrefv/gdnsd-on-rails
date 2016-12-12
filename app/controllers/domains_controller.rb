@@ -12,7 +12,8 @@ class DomainsController < ApplicationController
       flash[:success] = t('activerecord.attributes.domain.saved')
       redirect_to @domain
     else
-      render :new
+      flash[:alert] = @domain.errors.full_messages.join(", ").remove("Soa")
+      redirect_to new_domain_path
     end
   end
 
