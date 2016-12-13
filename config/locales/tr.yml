@@ -3,27 +3,30 @@
 tr:
   activerecord:
     errors:
+      blank_messages: "Boş kalamaz!"
       models:
         soa:
           attributes:
             email:
-              blank: "Email boş kalamaz!"
+              blank: "Boş kalamaz!"
             nameserver1:
-              blank: "Nameserver1 boş kalamaz!"
+              blank: "Boş kalamaz!"
             nameserver2:
-              blank: "Nameserver2 boş kalamaz!"
+              blank: "Boş kalamaz!"
         record:
           attributes:
             content:
-              blank: "Content Boş kalamaz!"
+              blank: "Boş kalamaz!"
+              invalid: "IP uyumlu değil!"
             ttl:
-              blank: "TTL Boş kalamaz!"
+              blank: "Boş kalamaz!"
             name:
-              blank: "Name Boş kalamaz!"
+              blank: "Boş kalamaz!"
+              invalid: "Standartlara uygun değildir!"
         domain:
           attributes:
             name:
-              blank: "Domain Adı Boş kalamaz!"
-              taken: "Domain Adı Benzersiz Olmalı!"
+              blank: "Boş kalamaz!"
+              taken: "Benzersiz Olmalı!"
             records:
               invalid: "Boş kalamaz"

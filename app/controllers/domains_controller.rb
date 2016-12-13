@@ -8,12 +8,12 @@ class DomainsController < ApplicationController
 
   def create
     @domain = Domain.new(domain_params)
-
     if @domain.save
       flash[:success] = t('activerecord.attributes.domain.saved')
       redirect_to @domain
     else
-      render :new
+      flash[:alert] = @domain.errors.full_messages.join(", ").remove("Soa")
+      redirect_to new_domain_path
     end
   end
 
@@ -37,10 +37,6 @@ class DomainsController < ApplicationController
     redirect_to root_path
   end
 
-  def index
-    @domains = Domain.all
-  end
-
   def edit
 
   end
@@ -53,6 +49,9 @@ class DomainsController < ApplicationController
     end
   end
 
+  def index
+    @domains = Domain.all.order(:id)
+  end
 
   private
 
