@@ -4,23 +4,24 @@ class Record < ApplicationRecord
   belongs_to :domain
 
   #Validations
-  validates :rtype, :content, :ttl, presence: true
   REGEX_DOMAIN_NAME = /(?=^.{4,253}$)(^((?!-)[a-zA-Z0-9-]{1,63}(?<!-)\.)+[a-zA-Z]{2,63}\.?$)/
   validates :name, presence: true, format: { with: REGEX_DOMAIN_NAME }
+  validates :rtype, :content, :ttl, presence: true
   validate :check_content
 
   #Callbacks
-  after_create :create_text_file, :serial
-  after_update :create_text_file
-  after_destroy :create_text_file, :serial
-
+  after_create   :serial
+  after_destroy  :serial
+  after_commit  :create_text_file, on: [:create,:destroy]
   enum rtype: { A: 0, AAAA: 1, NS: 2, PTR: 3, CNAME: 4, MX: 5, SRV: 6, TXT: 7, NAPTR: 8}
 
 
   private
   def create_text_file
-    process = FileProcess.new
-    process.create_file_for_record(self.domain_id)
+    #WriteRecordJob.set(wait: 1.second).perform_later(self.domain_id,self.domain.name)
+    WriteRecordJob.perform_later(self.domain_id,self.domain.name)
+    #process = FileProcess.new
+    #process.create_file_for_record(self.domain_id)
   end
 
   def check_content

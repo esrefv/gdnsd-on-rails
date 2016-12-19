@@ -43,7 +43,7 @@ bulutfon.records.create(name: 'mail.bulutfon.net.', rtype: 4, content: 'bulutfon
 
 
 superni = Domain.create(name: 'superni.net')
-superni.create_soa(nameserver1: "nitel-1.ni.net.tr. ", nameserver2: "nitel-2.ni.net.tr. ", email: "dnsmaster.ni.net.tr.",
+superni.create_soa(nameserver1: "nitel-1.ni.net.tr.", nameserver2: "nitel-2.ni.net.tr.", email: "dnsmaster.ni.net.tr.",
                     refresh:"3H", retry: "5m", expire: "1w", ttl_min: "3h", ttl_default: 86400)
 
 superni.records.create(name: 'ftp.superni.net.', rtype: 0, content: '94.102.0.9', ttl: '14400')
