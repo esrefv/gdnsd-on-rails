@@ -1,6 +1,5 @@
 class WriteDomainJob < ApplicationJob
   queue_as :default
-  puts "WriteDomainJob"
 
   def perform(domain_id,textfilename)
     @soas = Soa.where(domain_id: domain_id)
